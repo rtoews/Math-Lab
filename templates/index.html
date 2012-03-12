@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decimal Calculator</title>
+    <link rel="stylesheet" href="/media/math.css" type="text/css"/>
+</head>
+<body>
+<h1>Decimal Calculator</h1>
+
+<form name="fraction" method="post" action="decimals">{% csrf_token %}
+<div align="center">
+<table>
+  <tr>
+    <th>Numerator</th>
+    <th>Denominator</th>
+    <th>Base</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><input type="text" name="numerator" size="9"></td>
+    <td><input type="text" name="denominator" size="9"></td>
+    <td><input type="hidden" name="base" value="10"></td>
+    <td align="center" colspan="3"><input type="submit" name="Calculate" value="Calculate"></td>
+  </tr>
+</table>
+</div>
+</form>
+</body>
+</html>

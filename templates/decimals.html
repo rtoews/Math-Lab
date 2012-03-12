@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decimal Calculator Results</title>
+    <link rel="stylesheet" href="/media/math.css" type="text/css"/>
+</head>
+<body>
+<h1>Decimal Calculator</h1>
+
+<p>Denominator: {{ denominator }}</p>
+<p>Base: {{ base }}</p>
+<table>
+    <tr><th>Fraction</th><th>Decimal</th><th>Length</th><th>Resolves</th><th>Non-repeating places</th></tr>
+{% for dec in decimal_data %}
+    <tr><td>{{ dec.fraction }}</td><td>{{ dec.decimal_parts.0 }}<span class="dec_primary">{{ dec.decimal_parts.1 }}</span><span class="dec_complementary">{{ dec.decimal_parts.2 }}</span></td><td>{{ dec.length }}</td><td>{{ dec.resolves }}</td><td>{{ dec.non_repeating }}</td></tr>
+{% endfor %}
+</table>
+</body>
+</html>
