@@ -16,12 +16,7 @@ def decimals(request):
     base = request.POST['base']
 
     myDec = Decimal(denom, base)
-    #digits = myDec.long_division()
-    #decimal = ''.join(map(str,digits))
-    #decimal_length = len(decimal)
 
-    #t = loader.get_template('calcresults.html')
     c = RequestContext(request, { 'denominator' : myDec.denominator, 'base' : myDec.base, 'decimal_data' : myDec.data })
 
     return render_to_response("decimals.html", c)
-    #return HttpResponse(t.render(c))
